@@ -6,7 +6,8 @@
 .container{
     background:url(pexels-veeterzy-39811.jpg);
     height: 100vh;
-    background-size: 100% 100%;
+    background-position: center;
+    background-size: cover;
 }
 
 .container .navbar{
