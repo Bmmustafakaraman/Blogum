@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BM 101 Mustafa'nın Sayfası</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        .close {
+            color: red;
+            font-size: 24px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .modal-content input[type="text"], .modal-content select, .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .modal-content button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #218838;
+        }
+
+    </style>
+    <script>
+        window.onload = function() {
+
+            var imgModal = document.getElementById('myModal');
+            var imgBtn = document.getElementById('modalButton');
+            var imgCloseBtn = document.getElementsByClassName('close')[0];
+
+            imgBtn.onclick = function() {
+                imgModal.style.display = 'flex';
+            }
+
+            imgCloseBtn.onclick = function() {
+                imgModal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == imgModal) {
+                    imgModal.style.display = 'none';
+                }
+            }
+
+            var surveyModal = document.getElementById('surveyModal');
+            var surveyBtn = document.getElementById('surveyButton');
+            var surveyCloseBtn = document.getElementsByClassName('close-survey')[0];
+
+            surveyBtn.onclick = function() {
+                surveyModal.style.display = 'flex';
+            }
+
+            surveyCloseBtn.onclick = function() {
+                surveyModal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == surveyModal) {
+                    surveyModal.style.display = 'none';
+                }
+            }
+
+            var aboutModal = document.getElementById('aboutModal');
+            var aboutBtn = document.getElementById('aboutButton');
+            var aboutCloseBtn = document.getElementsByClassName('close-about')[0];
+
+            aboutBtn.onclick = function() {
+                aboutModal.style.display = 'flex';
+            }
+
+            aboutCloseBtn.onclick = function() {
+                aboutModal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == aboutModal) {
+                    aboutModal.style.display = 'none';
+                }
+            }
+
+            var projectsModal = document.getElementById('projectsModal');
+            var projectsBtn = document.getElementById('projectsButton');
+            var projectsCloseBtn = document.getElementsByClassName('close-projects')[0];
+
+            projectsBtn.onclick = function() {
+                projectsModal.style.display = 'flex';
+            }
+
+            projectsCloseBtn.onclick = function() {
+                projectsModal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == projectsModal) {
+                    projectsModal.style.display = 'none';
+                }
+            }
+
+            document.getElementById('surveyForm').onsubmit = function(e) {
+                e.preventDefault();
+                alert('Anket gönderildi!');
+                surveyModal.style.display = 'none';
+            }
+        };
+    </script>
+</head>
+<body>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Allah Boş Duranı Sevmez</p>
+            <img src="https://i.hizliresim.com/p2h1hrs.jpg" alt="MTG Fotoğrafı">
+        </div>
+    </div>
+
+    <div id="surveyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-survey">&times;</span>
+            <h2>Anketimize Katılın</h2>
+            <form id="surveyForm">
+                <label for="name">İsminiz:</label>
+                <input type="text" id="name" name="name" placeholder="İsminizi giriniz" required>
+
+                <label for="age">Yaşınız:</label>
+                <input type="text" id="age" name="age" placeholder="Yaşınızı giriniz" required>
+
+                <label for="city">Yaşadığınız şehir:</label>
+                <input type="text" id="city" name="city" placeholder="Şehrinizi giriniz" required>
+
+                <label for="height">Boyunuz:</label>
+                <input type="text" id="Boy" name="Boy" placeholder="Boyunuzu Giriniz" required>
+
+                <label for="Movie&series">Favori Film&Diziniz:</label>
+                <input type="text" id="Movie&series" name="Movie&series" placeholder="Favori Film&Diziniz" required>
+
+                <label for="interest">İlgi Alanınız:</label>
+                <select id="interest" name="interest" required>
+                    <option value="yazılım">Yazılım</option>
+                    <option value="donanım">Donanım</option>
+                    <option value="veri bilimi">Veri Bilimi</option>
+                    <option value="Teknoloji tutkunluğu">Teknoloji tutkunluğu</option>
+                    <option value="Bilgisayar Mühendisliği">Bilgisayar Mühendisliği</option>
+                    <option value="diğer">Diğer</option>
+                </select>
+
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-about">&times;</span>
+            <h2>Hakkımda</h2>
+            <h3>Bloguma Hoş geldiniz.
+                Ben Mustafa İsmail Karaman, Düzce Üniversitesi'nde bilgisayar mühendisliği okuyorum.
+                 Teknolojiye olan tutkum beni bu alana yönlendirdi ve bu süreçte öğrendiklerimle her gün kendimi daha da geliştirmenin yollarını arıyorum.
+                Özellikle yazılım geliştirme ve veri analizi konularına ilgi duyuyorum ve bunun için birçok proje temelini öğrenmeye çalışıyorum. Takım çalışmasına büyük önem veriyorum;
+                 Hedefim, gelecekte teknoloji dünyasında iz bırakacak bir mühendis olmak ve öğrendiklerimi genel mühendislik piyasasında pazarlayarak , hem kendimi hem de
+                 ilgili olduğum alanın gelişmesini sağlamak için kullanmak. Bunun yanında profesyonelleştikten sonra çaylakları geliştirerek bu alanda iz bırakmak hedeflerim arasında.
+            </h3>
+        </div>
+    </div>
+
+    <div id="projectsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-projects">&times;</span>
+            <h2>Projeleriniz Hakkında Yazın:</h2>
+            <h3>
+                Şu anda güncel projem bulunmamakla birlikte birkaç şey hakkında çalışıyorum. Bu website de çalıştığım projelerden birisi :D
+            </h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Mustafa İsmail Karaman</a>
+            </div>
+            <ul>
+                <li><a href="#" class="active">Ana Sayfa</a></li>
+                <li><a href="#" id="aboutButton">Hakkında</a></li>
+                <li><a href="#" id="projectsButton">Projeler</a></li>
+                <li><a href="#" id="surveyButton">Anket</a></li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <h1>Bloguma Hoş geldiniz.
+                Ben Mustafa İsmail Karaman, Düzce Üniversitesi'nde bilgisayar mühendisliği okuyorum.
+                 Teknolojiye olan tutkum beni bu alana yönlendirdi ve bu süreçte öğrendiklerimle her gün kendimi daha da geliştirmenin yollarını arıyorum.
+                Özellikle yazılım geliştirme ve veri analizi konularına ilgi duyuyorum ve bunun için birçok proje temelini öğrenmeye çalışıyorum. Takım çalışmasına büyük önem veriyorum;
+                 Hedefim, gelecekte teknoloji dünyasında iz bırakacak bir mühendis olmak ve öğrendiklerimi genel mühendislik piyasasında pazarlayarak , hem kendimi hem de
+                 ilgili olduğum alanın gelişmesini sağlamak için kullanmak. Bunun yanında profesyonelleştikten sonra çaylakları geliştirerek bu alanda iz bırakmak hedeflerim arasında. </h1>
+            <h2>Hasımlarla Caddede Dostlarla Cami'de. "Hayırlı Cumalar"</h2>
+
+            <div class="buttons">
+                <button><a href="https://www.youtube.com/@%E4%B9%87%E4%B9%87%E5%B0%BA%E5%87%A0%E5%8D%82" class="button">Daha Fazla</a></button>
+                <button><a href="https://www.youtube.com/@%E4%B9%87%E4%B9%87%E5%B0%BA%E5%87%A0%E5%8D%82" class="button">YKS serüvenim</a></button>
+                <button id="modalButton">MTG</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
